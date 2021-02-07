@@ -6,7 +6,7 @@
     app:startDestination="@id/charactersListFragment">
     <fragment
         android:id="@+id/charactersListFragment"
-        android:name="com.android.richandmortyapp.ui.characters_list.CharactersListFragment"
+        android:name="com.android.richandmortyapp.ui.characters_list.view.CharactersListFragment"
         android:label="fragment_characters_list"
         tools:layout="@layout/fragment_characters_list" />
 </navigation>

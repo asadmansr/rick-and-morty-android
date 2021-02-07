@@ -1,4 +1,4 @@
-package com.android.richandmortyapp.ui.characters_list
+package com.android.richandmortyapp.ui.characters_list.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

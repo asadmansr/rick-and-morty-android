@@ -1,7 +1,8 @@
-package com.android.richandmortyapp
+package com.android.richandmortyapp.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.android.richandmortyapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

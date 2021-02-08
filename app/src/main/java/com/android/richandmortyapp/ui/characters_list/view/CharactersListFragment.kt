@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.richandmortyapp.R
-import com.android.richandmortyapp.data.api.response.Result
+import com.android.richandmortyapp.data.api.response.character.Result
 import com.android.richandmortyapp.ui.characters_list.item.CharacterItem
 import com.android.richandmortyapp.ui.characters_list.viewmodel.CharactersListViewModel
 import com.android.richandmortyapp.ui.characters_list.viewmodel.CharactersListViewModelFactory
@@ -65,7 +66,12 @@ class CharactersListFragment : Fragment() {
         }
 
         groupAdapter.setOnItemClickListener { item, view ->
-
+            val id = (item as CharacterItem).resultItem.id
+            val action =
+                CharactersListFragmentDirections.actionCharactersListFragmentToCharacterDetailFragment(
+                    id
+                )
+            requireView().findNavController().navigate(action)
         }
     }
 }

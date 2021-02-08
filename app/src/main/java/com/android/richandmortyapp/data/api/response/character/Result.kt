@@ -1,7 +1,8 @@
-package com.android.richandmortyapp.data.api.response
+package com.android.richandmortyapp.data.api.response.character
 
 
-import com.google.gson.annotations.SerializedName
+import com.android.richandmortyapp.data.api.response.character.Location
+import com.android.richandmortyapp.data.api.response.character.Origin
 
 data class Result(
     val created: String,

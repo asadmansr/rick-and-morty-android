@@ -1,7 +1,7 @@
 package com.android.richandmortyapp.ui.characters_list.item
 
 import com.android.richandmortyapp.R
-import com.android.richandmortyapp.data.api.response.Result
+import com.android.richandmortyapp.data.api.response.character.Result
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
@@ -18,7 +18,7 @@ class CharacterItem(
             item_character_species.text = resultItem.species
             Glide.with(item_character_image)
                 .load(resultItem.image)
-                .centerCrop()
+                .circleCrop()
                 .placeholder(R.mipmap.ic_launcher_round)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .skipMemoryCache(true)

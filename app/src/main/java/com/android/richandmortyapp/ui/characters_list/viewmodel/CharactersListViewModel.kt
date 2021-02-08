@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.android.richandmortyapp.data.api.ApiService
-import com.android.richandmortyapp.data.api.response.Result
+import com.android.richandmortyapp.data.api.response.character.Result
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 

@@ -1,9 +1,9 @@
-package com.android.richandmortyapp.data.api.response
+package com.android.richandmortyapp.data.api.response.character
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Origin(
+data class Location(
     val name: String,
     val url: String
 )

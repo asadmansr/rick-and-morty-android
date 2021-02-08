@@ -1,4 +1,4 @@
-package com.android.richandmortyapp.data.api.response
+package com.android.richandmortyapp.data.api.response.character
 
 
 import com.google.gson.annotations.SerializedName

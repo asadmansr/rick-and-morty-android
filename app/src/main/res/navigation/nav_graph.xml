@@ -6,7 +6,7 @@
     app:startDestination="@id/charactersListFragment">
     <fragment
         android:id="@+id/charactersListFragment"
-        android:name="com.android.richandmortyapp.ui.characters_list.view.CharactersListFragment"
+        android:name="com.android.rickandmortyapp.ui.characters_list.view.CharactersListFragment"
         android:label="fragment_characters_list"
         tools:layout="@layout/fragment_characters_list" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.android.richandmortyapp.ui.character_detail.view.CharacterDetailFragment"
+        android:name="com.android.rickandmortyapp.ui.character_detail.view.CharacterDetailFragment"
         android:label="fragment_character_detail"
         tools:layout="@layout/fragment_character_detail" >
         <argument

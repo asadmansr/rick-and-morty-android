@@ -11,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.android.richandmortyapp"
+        applicationId "com.android.rickandmortyapp"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1

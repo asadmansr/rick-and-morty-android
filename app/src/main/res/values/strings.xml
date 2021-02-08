@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Rick and Morty App</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="content_character_image">Character\'s image</string>
     <string name="title_episodes">Episodes</string>
 </resources>

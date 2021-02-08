@@ -1,0 +1,23 @@
+name: CI Pipeline Workflow
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Compile and build Android project
+        run: ./gradlew compileDebugSources assembleDebug
+
+  lint:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Perform Android lint on project
+        run: ./gradlew lintDebug

@@ -1,6 +1,6 @@
 # Rick and Morty Android App
 
-![](https://github.com/asadmansr/rick-and-morty-android/workflows/.github/workflows/ci-pipeline.yml/badge.svg)
+![](https://github.com/asadmansr/rick-and-morty-android/workflows/CI%20Pipeline%20Workflow/badge.svg)
 
 A Rick and Morty Android app using the REST api (https://rickandmortyapi.com/documentation/) to get a list of characters and which episodes they are in.
 

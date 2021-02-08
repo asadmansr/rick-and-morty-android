@@ -1,21 +1,26 @@
 package com.android.rickandmortyapp.ui.characters_list.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.android.rickandmortyapp.data.api.ApiService
 import com.android.rickandmortyapp.data.api.response.character.Result
+import com.android.rickandmortyapp.data.repository.character.CharacterRepository
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class CharactersListViewModel : ViewModel() {
+class CharactersListViewModel(
+    private val characterRepository: CharacterRepository
+) : ViewModel() {
 
     val characters = MutableLiveData<List<Result>>()
 
     fun getCharacters() {
         GlobalScope.launch {
-            Log.d("rmDebug", "get items")
-            characters.postValue(ApiService().create().getCharacters().body()?.results)
+            val result = characterRepository.getCharacters()
+            if (result.isSuccessful) {
+                characters.postValue(result.body()?.results)
+            } else {
+                characters.postValue(null)
+            }
         }
     }
 }

@@ -1,7 +1,6 @@
 package com.android.rickandmortyapp.ui.characters_list.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.rickandmortyapp.R
+import com.android.rickandmortyapp.data.api.ApiService
 import com.android.rickandmortyapp.data.api.response.character.Result
+import com.android.rickandmortyapp.data.repository.character.CharacterRepository
+import com.android.rickandmortyapp.data.repository.character.CharacterRepositoryImpl
 import com.android.rickandmortyapp.ui.characters_list.item.CharacterItem
 import com.android.rickandmortyapp.ui.characters_list.viewmodel.CharactersListViewModel
 import com.android.rickandmortyapp.ui.characters_list.viewmodel.CharactersListViewModelFactory
@@ -24,6 +26,8 @@ class CharactersListFragment : Fragment() {
 
     private lateinit var viewModel: CharactersListViewModel
     private lateinit var viewModelFactory: CharactersListViewModelFactory
+    private lateinit var characterRepository: CharacterRepository
+    private lateinit var apiService: ApiService
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,17 +39,24 @@ class CharactersListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModelFactory = CharactersListViewModelFactory()
+        apiService = ApiService()
+        characterRepository = CharacterRepositoryImpl(apiService)
+        viewModelFactory = CharactersListViewModelFactory(characterRepository)
         viewModel =
             ViewModelProvider(this, viewModelFactory).get(CharactersListViewModel::class.java)
+
         getData()
     }
 
     private fun getData() {
         viewModel.getCharacters()
         viewModel.characters.observe(viewLifecycleOwner, Observer { characters ->
-            Log.d("rmDebug", "$characters")
-            initRecyclerView(characters.toCharacterItem())
+            progress_characters_list.visibility = View.GONE
+            if (characters == null) {
+                tv_error_message.visibility = View.VISIBLE
+            } else {
+                initRecyclerView(characters.toCharacterItem())
+            }
         })
     }
 

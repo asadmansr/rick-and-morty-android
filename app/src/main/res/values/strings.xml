@@ -2,4 +2,5 @@
     <string name="app_name">Rick and Morty App</string>
     <string name="content_character_image">Character\'s image</string>
     <string name="title_episodes">Episodes</string>
+    <string name="error_network_call">Unable to fetch data. Please try again later.</string>
 </resources>
